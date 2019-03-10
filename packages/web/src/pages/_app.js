@@ -1,6 +1,6 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import { asset, ja } from '@firebase-monorepo-starter/assets'
+import { asset, ja } from '@up-g/assets'
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

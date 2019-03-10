@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { getLanguage } from '@firebase-monorepo-starter/assets'
+import { getLanguage } from '@up-g/assets'
 
 export const Home = () => {
   return (

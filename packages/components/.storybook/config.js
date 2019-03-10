@@ -3,7 +3,7 @@ import { configureViewport } from '@storybook/addon-viewport'
 import { withOptions } from '@storybook/addon-options'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withPropsTable } from 'storybook-addon-react-docgen'
-import { asset, ja } from '@firebase-monorepo/assets'
+import { asset, ja } from '@up-g/assets'
 
 function loadStories() {
   asset.setContents(ja)

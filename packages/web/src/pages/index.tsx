@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Home as Hooo } from '@firebase-monorepo-starter/tube-components'
+import { Home as Hooo } from '@up-g/components'
 
 const Home = () => {
   return (
