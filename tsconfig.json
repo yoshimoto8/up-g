@@ -9,7 +9,7 @@
     "experimentalDecorators": true,
     "target": "es6",
     "sourceMap": true,
-    "lib": ["es6"]
+    "lib": ["esnext", "dom"]
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "lib", "dest"]
 }

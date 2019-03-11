@@ -11,7 +11,7 @@
     "lint:format": "prettier --write './src/**/*.{js,ts,tsx,scss,json}'",
     "build": "npm-run-all build:ts:*",
     "build:ts:babel": "upbin babel src --extensions '.ts,.tsx' --out-dir dest --source-maps",
-    "build:ts:types": "upbin tsc --project tsconfig.json --declarationDir ./dest",
+    "build:ts:types": "upbin tsc --project ./tsconfig.json --declarationDir ./dest",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
