@@ -12,11 +12,15 @@ function loadStories() {
 }
 
 addDecorator(withKnobs({ escapeHTML: false }))
+
 addDecorator(
   withOptions({
     addonPanelInRight: true
   })
 )
+
+addDecorator(withPropsTable({}))
+
 addDecorator(withPropsTable({}))
 
 configure(loadStories, module)
