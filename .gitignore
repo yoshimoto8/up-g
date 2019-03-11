@@ -4,3 +4,4 @@
 ./node_modules
 packages/web/.next
 packages/web-components/dest
+**/dist

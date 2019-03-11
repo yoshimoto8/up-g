@@ -6,6 +6,7 @@
   "homepage": "https://github.com/yoshimoto8/up-g#readme",
   "license": "ISC",
   "main": "dest/index.js",
+  "repository": "yoshimoto8/up-g",
   "scripts": {
     "build": "npm-run-all build:ts:*",
     "build:ts:babel": "upbin babel src --extensions '.ts,.tsx' --out-dir dest --source-maps",
