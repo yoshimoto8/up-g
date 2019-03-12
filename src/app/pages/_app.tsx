@@ -1,6 +1,6 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-import { asset, ja } from '@up-g/assets'
+import { asset, ja } from '../assets'
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

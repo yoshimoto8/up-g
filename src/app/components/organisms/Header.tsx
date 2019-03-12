@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { getLanguage as t } from '@up-g/assets'
+import { getLanguage as t } from '../../assets'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'

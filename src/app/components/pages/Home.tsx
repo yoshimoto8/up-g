@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { getLanguage } from '@up-g/assets'
+import { getLanguage } from '../../assets'
 import Header from '../organisms/Header'
 
 export const Home = () => {
