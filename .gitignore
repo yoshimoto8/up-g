@@ -1,7 +1,5 @@
-**/node_modules
-**/lib
-**/dest
-./node_modules
-packages/web/.next
-packages/web-components/dest
-**/dist
+dist/
+
+
+# Firebase cache
+.firebase/
