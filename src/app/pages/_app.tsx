@@ -1,10 +1,14 @@
 import React from 'react'
 import App, { Container } from 'next/app'
+import { Provider } from 'react-redux'
+import withRedux from 'next-redux-wrapper'
+import withReduxSaga from 'next-redux-saga'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import JssProvider from 'react-jss/lib/JssProvider'
 import getPageContext from './getPageContext'
 import { asset, ja } from '../assets'
+import createStore from '../store'
 
 class MyApp extends App {
   constructor() {
@@ -23,32 +27,35 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    //@ts-ignore
+    const { Component, pageProps, store } = this.props
     asset.setContents(ja)
     return (
       <Container>
-        <JssProvider
-          //@ts-ignore
-          registry={this.pageContext.sheetsRegistry}
-          //@ts-ignore
-          generateClassName={this.pageContext.generateClassName}
-        >
-          <MuiThemeProvider
+        <Provider store={store}>
+          <JssProvider
             //@ts-ignore
-            theme={this.pageContext.theme}
+            registry={this.pageContext.sheetsRegistry}
             //@ts-ignore
-            sheetsManager={this.pageContext.sheetsManager}
+            generateClassName={this.pageContext.generateClassName}
           >
-            <CssBaseline />
+            <MuiThemeProvider
+              //@ts-ignore
+              theme={this.pageContext.theme}
+              //@ts-ignore
+              sheetsManager={this.pageContext.sheetsManager}
+            >
+              <CssBaseline />
 
-            {/*
+              {/*
                // @ts-ignore */}
-            <Component pageContext={this.pageContext} {...pageProps} />
-          </MuiThemeProvider>
-        </JssProvider>
+              <Component pageContext={this.pageContext} {...pageProps} />
+            </MuiThemeProvider>
+          </JssProvider>
+        </Provider>
       </Container>
     )
   }
 }
 
-export default MyApp
+export default withRedux(createStore)(withReduxSaga(MyApp))
