@@ -7,7 +7,7 @@ import { asset, ja } from '../src/app/assets'
 
 function loadStories() {
   asset.setContents(ja)
-  const req = require.context('../src', true, /\.story\.tsx?$/)
+  const req = require.context('../src/app/components', true, /\.story\.tsx?$/)
   req.keys().forEach(story => req(story))
 }
 
