@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "next src/app",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "build": "npm run build-public && npm run build-functions && npm run build-app && npm run copy-deps && npm run install-deps",
     "preserve": "npm run build-public && npm run build-functions && npm run build-app && npm run copy-deps && npm run install-deps",
     "serve": "cross-env NODE_ENV=production firebase serve",
     "deploy": "firebase deploy",
