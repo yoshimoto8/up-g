@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { ReactNode } from 'react'
 import { getLanguage as t } from '../../assets'
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
@@ -10,28 +11,32 @@ import Button from '../atoms/Button'
 
 type Props = {
   classes: any
+  children: ReactNode
 }
 
-const Heaer = ({ classes }: Props) => {
+const Main = ({ classes, children }: Props) => {
   return (
-    <React.Fragment>
-      <AppBar className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="Menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            News
-          </Typography>
-          <Button label={t('registorAccount')} color="inherit" />
-          <Button label={t('login')} variant="contained" color="primary" />
-        </Toolbar>
-      </AppBar>
-    </React.Fragment>
+    <main>
+      <React.Fragment>
+        <AppBar className={classes.appBar}>
+          <Toolbar>
+            <IconButton
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="Menu"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" color="inherit" className={classes.grow}>
+              News
+            </Typography>
+            <Button label={t('registorAccount')} color="inherit" />
+            <Button label={t('login')} variant="contained" color="primary" />
+          </Toolbar>
+        </AppBar>
+      </React.Fragment>
+      <div>{children}</div>
+    </main>
   )
 }
 
@@ -48,4 +53,4 @@ const styles = {
   }
 }
 
-export default withStyles(styles)(Heaer)
+export default withStyles(styles)(Main)
