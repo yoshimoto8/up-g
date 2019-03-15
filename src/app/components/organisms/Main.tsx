@@ -7,6 +7,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 import Button from '../atoms/Button'
 
 type Props = {
@@ -36,6 +37,20 @@ const Main = ({ classes, children }: Props) => {
         </AppBar>
       </React.Fragment>
       <div>{children}</div>
+      <SwipeableDrawer
+        open={this.state.left}
+        onClose={this.toggleDrawer('left', false)}
+        onOpen={this.toggleDrawer('left', true)}
+      >
+        <div
+          tabIndex={0}
+          role="button"
+          onClick={this.toggleDrawer('left', false)}
+          onKeyDown={this.toggleDrawer('left', false)}
+        >
+          {sideList}
+        </div>
+      </SwipeableDrawer>
     </main>
   )
 }
