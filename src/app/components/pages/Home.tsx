@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { getLanguage } from '../../assets'
-import Main from '../organisms/Header'
-// import Header from '../components/organisms/Header'
+import Main from '../organisms/Main'
 
 export const Home = () => {
   return (
